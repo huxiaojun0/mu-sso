@@ -7,10 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <title>Title</title>
+</head>
+<body>
+<h3>Shiro验证登陆</h3>
+<form id="form" action="/dologin" method="post">
+  <input type="text" name="username" />${error }<br/>
+  <input type="password" name="password" /><br/>
+  <button type="submit" name="button">登陆</button>
+</form>
+
+</body>
 </html>
+

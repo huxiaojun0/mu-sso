@@ -12,4 +12,6 @@
 
     <ldap:ldap-template id="ldapTemplate" context-source-ref="contextSource" />
 
+    <import resource="classpath:spring-mybatis.xml" />
+    <import resource="classpath:ctx_shiro.xml" />
 </beans>
