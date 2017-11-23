@@ -33,6 +33,7 @@ public class DemoCtrl {
         try {
             subject.login(token);
             if (subject.isAuthenticated()) {
+
                 return "redirect:/user/student";
             } else {
                 return "login";

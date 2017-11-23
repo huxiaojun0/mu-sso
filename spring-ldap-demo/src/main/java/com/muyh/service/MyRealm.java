@@ -32,7 +32,8 @@ public class MyRealm extends AuthorizingRealm{
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        String username = (String) principalCollection.getPrimaryPrincipal(); //获取用户名
+        //获取用户名
+        String username = (String) principalCollection.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         TUser tUser = tUserMapper.selectByUsername(username);
         Set<String> roles = new HashSet<String>();
@@ -49,7 +50,8 @@ public class MyRealm extends AuthorizingRealm{
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
-        String username = (String) authenticationToken.getPrincipal(); // 获取用户名
+        // 获取用户名
+        String username = (String) authenticationToken.getPrincipal();
         TUser tUser = tUserMapper.selectByUsername(username);
         if (tUser != null) {
             AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(
